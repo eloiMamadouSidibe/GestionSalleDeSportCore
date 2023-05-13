@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-5.6.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gestion_salle_de_sport</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <!-- dbcp connection pool configuration -->
+        <property name="hibernate.dbcp.initialSize">5</property>
+
+        <!-- Hibernate dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+         <!-- Afficher la requete dans la console -->
+        <property name="show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+
+        <!-- Mapping files -->
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.Abonnement"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.Employe"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.Equipement"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.Cours"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.Membre"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.HistoriqueAbonnement"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.HistoriqueEmploi"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.ReservationCours"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.ReservationEquipement"/>
+        <mapping class="com.ems.gestionsallesport.core.gestionsallesport.entity.Paiement"/>
+        
+ 
+
+    </session-factory>
+</hibernate-configuration>
